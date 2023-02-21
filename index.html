@@ -14,15 +14,16 @@
     <section>
         <div id="app" class="container">
             <div class="carosello my-5">
-                <div class="slide position-relative">
-                    <img src="" alt="">
+                <div 
+                v-for="(element, indice) in slides"
+                class="slide position-relative"
+                >
+                    <img :src="element.image" alt="">
                     <div class="position-absolute bottom-0  text-white p-4 info">
                         <h2>
-                            
+                            {{element.title}}
                         </h2>
-                        <span>
-                        
-                        </span>
+                        <span v-html="element.text"></span>
                     </div>
                 </div>
                 <div class="carosello__arrow arrow-left">
